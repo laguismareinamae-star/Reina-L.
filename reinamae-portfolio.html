@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Reina Mae R. Laguisma | Medical · Executive · Legal VA</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --navy:#08101f;--navy2:#0e1a2e;--navy3:#142035;
+  --gold:#c9963a;--gold2:#e0b86a;--gold3:#f5e6c8;
+  --white:#f8f4ef;--gray:#8a93a6;--border:rgba(201,150,58,.18);
+  --green:#34c759;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--white);font-family:"DM Sans",sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 5%;display:flex;align-items:center;justify-content:space-between;background:rgba(8,16,31,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:"Playfair Display",serif;font-size:1.15rem;color:var(--gold);letter-spacing:.05em;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--gray);text-decoration:none;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--navy)!important;padding:.45rem 1.1rem;border-radius:2px;font-weight:600!important}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:8rem 5% 5rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 40%,rgba(201,150,58,.07) 0%,transparent 60%),linear-gradient(135deg,#08101f 0%,#0e1a2e 100%);z-index:0}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;width:100%;position:relative;z-index:1;max-width:1100px;margin:0 auto}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,150,58,.1);border:1px solid var(--border);color:var(--gold);padding:.35rem 1rem;border-radius:100px;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1.6rem;animation:fadeUp .6s ease both}
+.hero-tag::before{content:"";width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-name{font-family:"Playfair Display",serif;font-size:clamp(2.6rem,6vw,5rem);font-weight:700;line-height:1.05;margin-bottom:.3rem;animation:fadeUp .7s .1s ease both}
+.hero-name span{color:var(--gold)}
+.hero-title{font-family:"Playfair Display",serif;font-size:clamp(.9rem,2vw,1.2rem);font-style:italic;color:var(--gray);margin-bottom:1.6rem;animation:fadeUp .7s .2s ease both}
+.hero-desc{font-size:1rem;color:rgba(248,244,239,.78);max-width:520px;margin-bottom:2.2rem;animation:fadeUp .7s .3s ease both}
+.hero-desc strong{color:var(--gold2);font-weight:500}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .7s .4s ease both;margin-bottom:2.5rem}
+.btn-primary{background:var(--gold);color:var(--navy);padding:.8rem 1.8rem;border-radius:2px;font-size:.85rem;font-weight:600;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;transition:background .2s,transform .2s;display:inline-block}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-outline{border:1px solid var(--border);color:var(--white);padding:.8rem 1.8rem;border-radius:2px;font-size:.85rem;letter-spacing:.08em;text-decoration:none;text-transform:uppercase;transition:border-color .2s,color .2s;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;animation:fadeUp .7s .5s ease both}
+.stat-num{font-family:"Playfair Display",serif;font-size:1.9rem;font-weight:700;color:var(--gold);line-height:1}
+.stat-label{font-size:.72rem;color:var(--gray);letter-spacing:.1em;text-transform:uppercase;margin-top:.2rem}
+
+/* PHOTO FRAME */
+.hero-photo-wrap{position:relative;flex-shrink:0;animation:fadeUp .7s .6s ease both}
+.hero-photo{width:260px;height:310px;object-fit:cover;object-position:top;border-radius:4px;display:block;position:relative;z-index:1;border:2px solid var(--border)}
+.photo-frame{position:absolute;top:12px;left:12px;right:-12px;bottom:-12px;border:1px solid rgba(201,150,58,.25);border-radius:4px;z-index:0}
+.photo-badge{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--navy);padding:.45rem 1.2rem;border-radius:100px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;z-index:2}
+
+/* SECTION COMMONS */
+section{position:relative;z-index:1}
+.section-inner{max-width:1100px;margin:0 auto;padding:6rem 5%}
+.section-tag{display:inline-block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem}
+.section-title{font-family:"Playfair Display",serif;font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;line-height:1.15;margin-bottom:1.1rem}
+.section-sub{color:var(--gray);font-size:1rem;max-width:540px;margin-bottom:3rem}
+.divider{width:44px;height:2px;background:var(--gold);margin:1rem 0 1.8rem}
+
+/* ABOUT */
+#about{background:var(--navy2)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+.about-quote{font-family:"Playfair Display",serif;font-size:1.35rem;font-style:italic;color:var(--gold3);line-height:1.5;border-left:3px solid var(--gold);padding-left:1.4rem;margin-bottom:1.6rem}
+.about-text{color:rgba(248,244,239,.8);font-size:.96rem;margin-bottom:1.1rem}
+.about-text strong{color:var(--gold2);font-weight:500}
+.about-cards{display:flex;flex-direction:column;gap:1.1rem}
+.about-card{background:rgba(201,150,58,.05);border:1px solid var(--border);border-radius:4px;padding:1.2rem 1.5rem;transition:border-color .2s,background .2s;display:flex;gap:1rem;align-items:flex-start}
+.about-card:hover{border-color:var(--gold);background:rgba(201,150,58,.09)}
+.about-card-icon{font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
+.about-card-title{font-family:"Playfair Display",serif;font-size:1rem;color:var(--gold);margin-bottom:.2rem}
+.about-card-text{font-size:.84rem;color:var(--gray)}
+
+/* SERVICES */
+#services{background:var(--navy)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.service-card{background:var(--navy2);border:1px solid var(--border);border-radius:4px;padding:2rem 1.7rem;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative;overflow:hidden}
+.service-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.service-card:hover{transform:translateY(-6px);border-color:rgba(201,150,58,.4);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{font-size:1.9rem;margin-bottom:1.1rem;display:block}
+.service-title{font-family:"Playfair Display",serif;font-size:1.2rem;color:var(--white);margin-bottom:.7rem}
+.service-desc{font-size:.86rem;color:var(--gray);margin-bottom:1.3rem;line-height:1.7}
+.service-list{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.service-list li{font-size:.8rem;color:rgba(248,244,239,.72);padding-left:1rem;position:relative}
+.service-list li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+
+/* PROOF OF WORK */
+#proof{background:var(--navy2)}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.proof-card{background:var(--navy3);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.proof-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+.proof-mockup{width:100%;height:180px;position:relative;overflow:hidden}
+.proof-caption{padding:1.2rem 1.4rem}
+.proof-tag{font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.proof-title{font-family:"Playfair Display",serif;font-size:1rem;color:var(--white);margin-bottom:.3rem}
+.proof-desc{font-size:.8rem;color:var(--gray)}
+
+/* EHR MOCKUP */
+.mockup-ehr{background:#0d1b2a;padding:10px;height:100%}
+.ehr-header{background:#1a2d44;border-radius:3px;padding:6px 10px;display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.ehr-dot{width:7px;height:7px;border-radius:50%}
+.ehr-title{font-size:9px;color:#7a9cc0;letter-spacing:.1em;text-transform:uppercase}
+.ehr-body{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.ehr-field{background:#1a2d44;border-radius:2px;padding:6px 8px}
+.ehr-label{font-size:7px;color:#4a7a9b;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.ehr-value{font-size:9px;color:#a8c8e8}
+.ehr-status{display:inline-block;background:rgba(52,199,89,.15);color:#34c759;font-size:7px;padding:2px 6px;border-radius:10px;border:1px solid rgba(52,199,89,.3)}
+.ehr-chart{background:#1a2d44;border-radius:2px;padding:6px 8px;margin-top:6px}
+.ehr-bars{display:flex;align-items:flex-end;gap:4px;height:35px;margin-top:4px}
+.ehr-bar{background:linear-gradient(to top,#2a6496,#4a9cc8);border-radius:2px 2px 0 0;width:12px}
+
+/* CALENDAR MOCKUP */
+.mockup-cal{background:#0a1628;padding:10px;height:100%}
+.cal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding:0 2px}
+.cal-month{font-size:10px;color:var(--gold);font-weight:600;letter-spacing:.05em}
+.cal-nav{font-size:10px;color:#4a6a8a}
+.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:6px}
+.cal-day-h{font-size:7px;color:#4a6a8a;text-align:center;text-transform:uppercase;letter-spacing:.05em}
+.cal-day{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:8px;color:#7a9cc0;border-radius:2px}
+.cal-day.today{background:var(--gold);color:var(--navy);font-weight:700}
+.cal-day.event{background:rgba(74,154,200,.2);color:#4a9cc8}
+.cal-day.filled{color:rgba(255,255,255,.5)}
+.cal-events{display:flex;flex-direction:column;gap:4px}
+.cal-event{background:#1a2d44;border-left:2px solid var(--gold);border-radius:0 2px 2px 0;padding:4px 7px;display:flex;justify-content:space-between;align-items:center}
+.cal-event-title{font-size:7px;color:#a8c8e8}
+.cal-event-time{font-size:7px;color:var(--gold);opacity:.8}
+
+/* LEGAL MOCKUP */
+.mockup-legal{background:#0d1520;padding:10px;height:100%}
+.legal-header{background:#16243a;border-radius:3px;padding:6px 10px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
+.legal-title{font-size:9px;color:#8ab4d4;letter-spacing:.1em;text-transform:uppercase}
+.legal-badge{background:rgba(201,150,58,.15);color:var(--gold);font-size:7px;padding:2px 7px;border-radius:10px;border:1px solid rgba(201,150,58,.3)}
+.legal-cases{display:flex;flex-direction:column;gap:5px}
+.legal-case{background:#16243a;border-radius:2px;padding:6px 8px;display:flex;align-items:center;justify-content:space-between}
+.legal-case-info{flex:1}
+.legal-case-num{font-size:7px;color:var(--gold);margin-bottom:2px}
+.legal-case-name{font-size:8px;color:#a8c8e8}
+.legal-case-status{font-size:7px;padding:2px 6px;border-radius:10px}
+.status-active{background:rgba(52,199,89,.15);color:#34c759;border:1px solid rgba(52,199,89,.3)}
+.status-pending{background:rgba(255,159,10,.15);color:#ff9f0a;border:1px solid rgba(255,159,10,.3)}
+.status-closed{background:rgba(90,90,90,.3);color:#8a8a8a;border:1px solid rgba(90,90,90,.4)}
+.legal-progress{height:3px;background:#1e3050;border-radius:10px;margin-top:6px}
+.legal-fill{height:100%;background:var(--gold);border-radius:10px}
+
+/* TOOLS */
+#tools{background:var(--navy)}
+.tools-section{margin-bottom:2.5rem}
+.tools-section-title{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--border)}
+.tools-row{display:flex;flex-wrap:wrap;gap:.6rem}
+.tool-chip{background:rgba(201,150,58,.05);border:1px solid var(--border);border-radius:3px;padding:.55rem .9rem;font-size:.78rem;color:rgba(248,244,239,.8);transition:background .2s,border-color .2s,color .2s;cursor:default}
+.tool-chip:hover{background:rgba(201,150,58,.12);border-color:var(--gold);color:var(--gold)}
+
+/* WHY */
+#why{background:var(--navy2)}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.why-item{display:flex;gap:1.1rem;align-items:flex-start;padding:1.7rem;background:var(--navy);border:1px solid var(--border);border-radius:4px;transition:border-color .2s}
+.why-item:hover{border-color:rgba(201,150,58,.4)}
+.why-num{font-family:"Playfair Display",serif;font-size:1.9rem;color:rgba(201,150,58,.15);font-weight:700;line-height:1;flex-shrink:0;width:2rem}
+.why-title{font-family:"Playfair Display",serif;font-size:1rem;color:var(--gold);margin-bottom:.35rem}
+.why-text{font-size:.85rem;color:var(--gray)}
+
+/* EXPERIENCE */
+#experience{background:var(--navy)}
+.timeline{position:relative;padding-left:2rem}
+.timeline::before{content:"";position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
+.tl-item{position:relative;padding-bottom:2.5rem;padding-left:1.5rem}
+.tl-dot{position:absolute;left:-2.35rem;top:.35rem;width:10px;height:10px;background:var(--gold);border-radius:50%;border:2px solid var(--navy)}
+.tl-role{font-family:"Playfair Display",serif;font-size:1.05rem;color:var(--white);margin-bottom:.15rem}
+.tl-meta{font-size:.78rem;color:var(--gold);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.6rem}
+.tl-list{list-style:none;display:flex;flex-direction:column;gap:.3rem}
+.tl-list li{font-size:.85rem;color:var(--gray);padding-left:.9rem;position:relative}
+.tl-list li::before{content:"◆";font-size:.38rem;position:absolute;left:0;top:.45rem;color:var(--gold)}
+
+/* TESTIMONIALS */
+#testimonials{background:var(--navy2)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.testi-card{background:var(--navy);border:1px solid var(--border);border-radius:4px;padding:1.8rem;position:relative}
+.testi-card::before{content:"\201C";font-family:"Playfair Display",serif;font-size:4.5rem;color:rgba(201,150,58,.1);position:absolute;top:-.3rem;left:1rem;line-height:1}
+.testi-text{font-size:.88rem;color:rgba(248,244,239,.8);font-style:italic;margin-bottom:1.4rem;line-height:1.7}
+.testi-author{display:flex;align-items:center;gap:.75rem}
+.testi-avatar{width:38px;height:38px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--navy);font-size:.85rem;flex-shrink:0}
+.testi-name{font-weight:600;font-size:.85rem;color:var(--white)}
+.testi-role{font-size:.75rem;color:var(--gray)}
+
+/* CTA */
+#cta{background:var(--navy);text-align:center;padding:7rem 5%;position:relative;overflow:hidden}
+#cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(201,150,58,.07) 0%,transparent 70%)}
+.cta-inner{position:relative;z-index:1;max-width:620px;margin:0 auto}
+.avail-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(52,199,89,.1);border:1px solid rgba(52,199,89,.25);color:var(--green);padding:.35rem 1rem;border-radius:100px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1.8rem}
+.avail-badge::before{content:"";width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+.cta-title{font-family:"Playfair Display",serif;font-size:clamp(1.9rem,3.8vw,3rem);font-weight:700;margin-bottom:1rem;line-height:1.2}
+.cta-title span{color:var(--gold)}
+.cta-sub{font-size:1rem;color:var(--gray);margin-bottom:2.2rem;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
+.cta-contact{margin-top:1.5rem;display:flex;flex-direction:column;gap:.5rem;align-items:center}
+.cta-link{color:var(--gold);text-decoration:none;font-size:.95rem;transition:opacity .2s}
+.cta-link:hover{opacity:.75}
+.cta-divider{color:var(--border)}
+
+/* FOOTER */
+footer{background:var(--navy2);border-top:1px solid var(--border);padding:1.8rem 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:"Playfair Display",serif;color:var(--gold);font-size:1rem;text-decoration:none}
+.footer-links{display:flex;gap:1.4rem;list-style:none}
+.footer-links a{font-size:.75rem;color:var(--gray);text-decoration:none;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:.75rem;color:var(--gray)}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* MOBILE */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .hero-grid{grid-template-columns:1fr;gap:2.5rem}
+  .hero-photo-wrap{order:-1;display:flex;justify-content:center}
+  .about-grid,.services-grid,.why-grid,.testi-grid,.proof-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#hero" class="nav-logo">Reina Mae</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#proof">Portfolio</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#cta" class="nav-cta">Hire Me</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-tag">Available for Long-Term Clients</div>
+      <h1 class="hero-name">Reina Mae<br/><span>R. Laguisma</span></h1>
+      <p class="hero-title">Medical · Executive · Legal Virtual Assistant</p>
+      <p class="hero-desc">I help <strong>Physicians, CEOs &amp; Business Owners</strong> eliminate admin overwhelm — so they can focus on what only they can do. Backed by nursing training and 4+ years across healthcare, executive, and legal operations.</p>
+      <div class="hero-btns">
+        <a href="https://calendly.com/laguismareinamae/new-meeting" target="_blank" class="btn-primary">Book a Discovery Call</a>
+        <a href="#services" class="btn-outline">View My Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">4+</div><div class="stat-label">Years Experience</div></div>
+        <div class="stat"><div class="stat-num">3</div><div class="stat-label">Specializations</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">HIPAA Compliant</div></div>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <div style="position:relative;display:inline-block">
+        <img src="data:image/png;base64,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" alt="Reina Mae R. Laguisma" class="hero-photo"/>
+        <div class="photo-frame"></div>
+        <div class="photo-badge">BSN · HIPAA · Remote</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Built for High-Stakes<br/>Professionals</h2>
+        <div class="divider"></div>
+        <blockquote class="about-quote">"You did not build your career to spend your day answering emails."</blockquote>
+        <p class="about-text">I'm <strong>Reina Mae R. Laguisma</strong> — a Virtual Assistant with a rare combination most VAs simply don't have. My nursing background taught me precision, urgency, and zero tolerance for error.</p>
+        <p class="about-text">My time in healthcare administration showed me how much time physicians lose every day to work that isn't patient care. My experience in legal and executive support taught me how to protect a professional's time like it's the most valuable asset in the room — <strong>because it is.</strong></p>
+        <p class="about-text">I work with a select number of long-term clients across the US. If you're ready to finally delegate with confidence — I'm ready.</p>
+        <br/>
+        <a href="https://calendly.com/laguismareinamae/new-meeting" target="_blank" class="btn-primary">Schedule a Call</a>
+      </div>
+      <div class="about-cards reveal">
+        <div class="about-card">
+          <div class="about-card-icon">🎓</div>
+          <div><div class="about-card-title">BSN Nursing Background</div><div class="about-card-text">Isabela State University (Expected 2026). Clinical rotations, medical terminology, and healthcare documentation — built in, not taught.</div></div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">⚖️</div>
+          <div><div class="about-card-title">Legal Admin Certified</div><div class="about-card-text">Completed Legal Administrative Assistant Course (2025). Proficient in Clio Manage, MyCase, Lawmatics across Personal Injury, Criminal &amp; Workers Comp.</div></div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">🌐</div>
+          <div><div class="about-card-title">US Client Experience</div><div class="about-card-text">Served US-based clients across healthcare, legal, real estate, home services &amp; coaching. Available EST / CST overlap.</div></div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-icon">🔒</div>
+          <div><div class="about-card-title">HIPAA-Compliant</div><div class="about-card-text">All workflows handled with full confidentiality and HIPAA compliance. Sensitive records treated as highest priority — no exceptions.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-inner">
+    <span class="section-tag reveal">What I Do</span>
+    <h2 class="section-title reveal">Three Specializations.<br/>One Trusted VA.</h2>
+    <p class="section-sub reveal">Most VAs specialize in one area. I bring three — so you never have to hire two people to do what I can handle alone.</p>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <span class="service-icon">🏥</span>
+        <h3 class="service-title">Medical VA</h3>
+        <p class="service-desc">For physicians and healthcare practices that need clinical-grade administrative support. I speak your language — no onboarding wasted.</p>
+        <ul class="service-list">
+          <li>EHR Management — ECW, NextGen, Athenahealth</li>
+          <li>Medical Scribing &amp; Clinical Documentation</li>
+          <li>AI Scribing — DAX Copilot, Suki AI</li>
+          <li>Insurance Verification &amp; Claims Processing</li>
+          <li>Patient Coordination &amp; Follow-Up</li>
+          <li>Prior Authorization Assistance</li>
+          <li>HIPAA-Compliant Workflows</li>
+          <li>Provider Calendar Management</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-icon">🏢</span>
+        <h3 class="service-title">Executive VA</h3>
+        <p class="service-desc">For CEOs and business owners who need a sharp, proactive assistant to protect their time and run day-to-day operations.</p>
+        <ul class="service-list">
+          <li>Complex Calendar &amp; Inbox Management</li>
+          <li>Travel Coordination &amp; Itinerary Planning</li>
+          <li>SOPs &amp; Process Documentation</li>
+          <li>Reports, Presentations &amp; Agendas</li>
+          <li>Stakeholder &amp; Client Communications</li>
+          <li>Expense Processing &amp; Reconciliation</li>
+          <li>CRM — HubSpot, GoHighLevel, ClickUp</li>
+          <li>Confidential Document Handling</li>
+        </ul>
+      </div>
+      <div class="service-card reveal">
+        <span class="service-icon">⚖️</span>
+        <h3 class="service-title">Legal VA</h3>
+        <p class="service-desc">For attorneys and law firms that need deadline-driven, detail-obsessed support. Personal Injury, Workers' Comp, Criminal Law — I've handled it all.</p>
+        <ul class="service-list">
+          <li>Case Management — Clio, MyCase, Lawmatics</li>
+          <li>Medical Records Coordination</li>
+          <li>Insurance Claims &amp; Exit Letters</li>
+          <li>Client Intake &amp; Status Updates</li>
+          <li>Court Date &amp; Deadline Tracking</li>
+          <li>Legal Correspondence Drafting</li>
+          <li>Document Prep &amp; PDF Management</li>
+          <li>Nationwide US Coverage (All States)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF OF WORK -->
+<section id="proof">
+  <div class="section-inner">
+    <span class="section-tag reveal">Portfolio</span>
+    <h2 class="section-title reveal">Work Samples &amp; Expertise</h2>
+    <p class="section-sub reveal">A glimpse into the tools, systems, and workflows I manage every day for my clients.</p>
+    <div class="proof-grid">
+
+      <!-- EHR Mockup -->
+      <div class="proof-card reveal">
+        <div class="proof-mockup mockup-ehr">
+          <div class="ehr-header">
+            <div class="ehr-dot" style="background:#ff5f57"></div>
+            <div class="ehr-dot" style="background:#ffbd2e"></div>
+            <div class="ehr-dot" style="background:#28ca41"></div>
+            <div class="ehr-title">EHR Patient Management — ECW / NextGen</div>
+          </div>
+          <div class="ehr-body">
+            <div class="ehr-field"><div class="ehr-label">Patient</div><div class="ehr-value">John D. Smith</div></div>
+            <div class="ehr-field"><div class="ehr-label">Visit Type</div><div class="ehr-value">Follow-Up</div></div>
+            <div class="ehr-field"><div class="ehr-label">Insurance</div><div class="ehr-value">Blue Cross PPO <span class="ehr-status">Verified ✓</span></div></div>
+            <div class="ehr-field"><div class="ehr-label">Authorization</div><div class="ehr-value"><span class="ehr-status">Approved</span></div></div>
+          </div>
+          <div class="ehr-chart">
+            <div class="ehr-label">Patient Volume — Weekly</div>
+            <div class="ehr-bars">
+              <div class="ehr-bar" style="height:55%"></div>
+              <div class="ehr-bar" style="height:70%"></div>
+              <div class="ehr-bar" style="height:45%"></div>
+              <div class="ehr-bar" style="height:80%"></div>
+              <div class="ehr-bar" style="height:65%"></div>
+              <div class="ehr-bar" style="height:90%"></div>
+              <div class="ehr-bar" style="height:60%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-caption">
+          <div class="proof-tag">Medical VA</div>
+          <div class="proof-title">EHR &amp; Patient Records Management</div>
+          <div class="proof-desc">Managing patient demographics, insurance verification, and clinical documentation across ECW and NextGen with zero compliance violations.</div>
+        </div>
+      </div>
+
+      <!-- Calendar Mockup -->
+      <div class="proof-card reveal">
+        <div class="proof-mockup mockup-cal">
+          <div class="cal-header">
+            <div class="cal-month">May 2025</div>
+            <div class="cal-nav">‹ › </div>
+          </div>
+          <div class="cal-days">
+            <div class="cal-day-h">Su</div><div class="cal-day-h">Mo</div><div class="cal-day-h">Tu</div><div class="cal-day-h">We</div><div class="cal-day-h">Th</div><div class="cal-day-h">Fr</div><div class="cal-day-h">Sa</div>
+            <div class="cal-day"></div><div class="cal-day"></div><div class="cal-day filled">1</div><div class="cal-day event">2</div><div class="cal-day filled">3</div><div class="cal-day filled">4</div><div class="cal-day filled">5</div>
+            <div class="cal-day event">6</div><div class="cal-day filled">7</div><div class="cal-day filled">8</div><div class="cal-day event">9</div><div class="cal-day filled">10</div><div class="cal-day filled">11</div><div class="cal-day filled">12</div>
+            <div class="cal-day filled">13</div><div class="cal-day event">14</div><div class="cal-day filled">15</div><div class="cal-day filled">16</div><div class="cal-day today">17</div><div class="cal-day event">18</div><div class="cal-day filled">19</div>
+          </div>
+          <div class="cal-events">
+            <div class="cal-event"><span class="cal-event-title">CEO Board Meeting Prep</span><span class="cal-event-time">9:00 AM</span></div>
+            <div class="cal-event"><span class="cal-event-title">Investor Call — Q2 Review</span><span class="cal-event-time">2:30 PM</span></div>
+            <div class="cal-event"><span class="cal-event-title">Travel: NYC → Chicago</span><span class="cal-event-time">5:45 PM</span></div>
+          </div>
+        </div>
+        <div class="proof-caption">
+          <div class="proof-tag">Executive VA</div>
+          <div class="proof-title">Calendar &amp; Schedule Management</div>
+          <div class="proof-desc">Managing complex multi-leader calendars, travel itineraries, and executive commitments across EST/CST time zones using Google Workspace &amp; Outlook.</div>
+        </div>
+      </div>
+
+      <!-- Legal Mockup -->
+      <div class="proof-card reveal">
+        <div class="proof-mockup mockup-legal">
+          <div class="legal-header">
+            <div class="legal-title">Clio Manage — Case Dashboard</div>
+            <div class="legal-badge">All US States</div>
+          </div>
+          <div class="legal-cases">
+            <div class="legal-case">
+              <div class="legal-case-info"><div class="legal-case-num">PI-2024-0041</div><div class="legal-case-name">Smith v. Insurance Corp.</div></div>
+              <div class="legal-case-status status-active">Active</div>
+            </div>
+            <div class="legal-case">
+              <div class="legal-case-info"><div class="legal-case-num">WC-2024-0088</div><div class="legal-case-name">Johnson — Workers Comp</div></div>
+              <div class="legal-case-status status-pending">Pending Docs</div>
+            </div>
+            <div class="legal-case">
+              <div class="legal-case-info"><div class="legal-case-num">CR-2024-0112</div><div class="legal-case-name">State v. Martinez</div></div>
+              <div class="legal-case-status status-active">Active</div>
+            </div>
+            <div class="legal-case">
+              <div class="legal-case-info"><div class="legal-case-num">PI-2023-0299</div><div class="legal-case-name">Williams Settlement</div></div>
+              <div class="legal-case-status status-closed">Closed</div>
+            </div>
+          </div>
+          <div class="legal-progress" style="margin-top:8px"><div class="legal-fill" style="width:72%"></div></div>
+        </div>
+        <div class="proof-caption">
+          <div class="proof-tag">Legal VA</div>
+          <div class="proof-title">Case Management — Clio &amp; MyCase</div>
+          <div class="proof-desc">Managing active caseloads in Personal Injury, Workers' Comp &amp; Criminal Law. Zero missed deadlines across concurrent matters, all US states.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="section-inner">
+    <span class="section-tag reveal">Tech Stack</span>
+    <h2 class="section-title reveal">Tools &amp; Platforms</h2>
+    <p class="section-sub reveal">I come ready to work on day one. No onboarding wasted on teaching me the basics.</p>
+    <div class="reveal">
+      <div class="tools-section">
+        <div class="tools-section-title">Medical &amp; Healthcare</div>
+        <div class="tools-row">
+          <div class="tool-chip">eClinicalWorks (ECW)</div><div class="tool-chip">NextGen Office</div><div class="tool-chip">Athenahealth</div><div class="tool-chip">DAX Copilot</div><div class="tool-chip">Suki AI</div>
+        </div>
+      </div>
+      <div class="tools-section">
+        <div class="tools-section-title">Legal &amp; Case Management</div>
+        <div class="tools-row">
+          <div class="tool-chip">Clio Manage</div><div class="tool-chip">MyCase</div><div class="tool-chip">Lawmatics</div><div class="tool-chip">Adobe Acrobat</div>
+        </div>
+      </div>
+      <div class="tools-section">
+        <div class="tools-section-title">Executive &amp; Productivity</div>
+        <div class="tools-row">
+          <div class="tool-chip">Microsoft Office Suite</div><div class="tool-chip">Google Workspace</div><div class="tool-chip">Teams &amp; SharePoint</div><div class="tool-chip">ClickUp</div><div class="tool-chip">Asana</div><div class="tool-chip">Trello</div><div class="tool-chip">Notion</div>
+        </div>
+      </div>
+      <div class="tools-section">
+        <div class="tools-section-title">CRM &amp; Automation</div>
+        <div class="tools-row">
+          <div class="tool-chip">HubSpot</div><div class="tool-chip">GoHighLevel</div><div class="tool-chip">Jobber</div><div class="tool-chip">Zapier</div><div class="tool-chip">Canva</div><div class="tool-chip">Zoom</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section id="why">
+  <div class="section-inner">
+    <span class="section-tag reveal">Why Choose Me</span>
+    <h2 class="section-title reveal">Not Your Average VA</h2>
+    <p class="section-sub reveal">Here's exactly what separates me from every other application in your inbox.</p>
+    <div class="why-grid">
+      <div class="why-item reveal"><div class="why-num">01</div><div><div class="why-title">Clinical Intelligence — Built In</div><div class="why-text">My BSN background means I understand medical terminology, EHR logic, and clinical workflows without being trained. I already know it. That saves you time and money from day one.</div></div></div>
+      <div class="why-item reveal"><div class="why-num">02</div><div><div class="why-title">Three High-Stakes Niches in One Hire</div><div class="why-text">Medical, legal, and executive support — all under one roof. Stop juggling multiple VAs or settling for someone who only partially fits what you need.</div></div></div>
+      <div class="why-item reveal"><div class="why-num">03</div><div><div class="why-title">Zero Error Tolerance</div><div class="why-text">I come from environments where mistakes have real consequences — healthcare and law. That discipline follows me into every task I take on for you.</div></div></div>
+      <div class="why-item reveal"><div class="why-num">04</div><div><div class="why-title">Long-Term Partnership Mindset</div><div class="why-text">I don't job-hop. I build lasting client relationships. When you invest in me, I invest back — fully and completely — with consistency you can count on.</div></div></div>
+      <div class="why-item reveal"><div class="why-num">05</div><div><div class="why-title">US-Ready &amp; EST/CST Available</div><div class="why-text">Based in the Philippines but fully available in your time zone. Experienced working with US clients across legal, medical, and executive environments.</div></div></div>
+      <div class="why-item reveal"><div class="why-num">06</div><div><div class="why-title">Proactive, Not Reactive</div><div class="why-text">I don't wait to be told. I anticipate needs, flag issues early, and keep things running before they become your problem.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <span class="section-tag reveal">Background</span>
+    <h2 class="section-title reveal">Experience &amp; Education</h2>
+    <div class="divider reveal"></div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-role">Executive / Virtual Assistant</div>
+        <div class="tl-meta">Multiple US-Based Clients · Remote · Aug 2023 – Mar 2026</div>
+        <ul class="tl-list">
+          <li>Delivered executive-level support across legal, real estate, home services, and coaching industries — enabling senior leaders to focus on growth.</li>
+          <li>Managed complex multi-leader calendars using Google Workspace and Microsoft Outlook; proactively resolved scheduling conflicts.</li>
+          <li>Drafted professional emails, presentations, and reports; prepared meeting agendas and follow-up documentation.</li>
+          <li>Supported legal admin functions using MyCase, Clio, and Lawmatics; coordinated deadlines for internal and external stakeholders.</li>
+          <li>Utilized CRM and project tools including ClickUp, Asana, HubSpot, GoHighLevel, and Canva in hybrid virtual environments.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-role">Medical Virtual Assistant</div>
+        <div class="tl-meta">Ritecare Medical · US-Based Remote · Jan 2023 – Feb 2025</div>
+        <ul class="tl-list">
+          <li>Provided comprehensive admin and operational support to senior medical professionals; managed high volumes of confidential patient and insurance data in full HIPAA compliance.</li>
+          <li>Managed complex provider scheduling and calendar coordination, resolving conflicts and keeping physicians prepared for daily commitments.</li>
+          <li>Processed insurance verification, claims, and billing documentation; tracked deadlines and followed up on outstanding items for timely resolution.</li>
+          <li>Maintained organized electronic records using EHR systems (ECW, NextGen) and Google Workspace; served as primary point of contact for internal teams and external stakeholders.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-role">Legal Case Manager — Personal Injury &amp; Criminal Law</div>
+        <div class="tl-meta">US Law Firm · Remote · Aug 2022 – Mar 2026</div>
+        <ul class="tl-list">
+          <li>Managed active caseloads across Personal Injury, Workers' Compensation, and Criminal Law for clients in multiple US states.</li>
+          <li>Tracked all court dates, filing deadlines, hearings, and milestones in Clio Manage — zero missed deadlines across concurrent matters.</li>
+          <li>Conducted diligent medical records follow-up; prepared complete packets for attorney review and insurance submission.</li>
+          <li>Opened and submitted insurance claims; drafted exit letters, client status updates, and provider correspondence with precision.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-role">Paralegal Virtual Assistant — Workers' Compensation</div>
+        <div class="tl-meta">US Law Firm · Remote · Jan 2020 – Jun 2022</div>
+        <ul class="tl-list">
+          <li>Supported WC case lifecycle from intake through settlement: drafted correspondence, coordinated with adjusters, and tracked statutory deadlines.</li>
+          <li>Liaised with medical providers, insurance carriers, and courts to gather documentation and confirm case status on behalf of supervising attorneys.</li>
+          <li>Achieved full proficiency in Clio Manage, MyCase, and Adobe Acrobat within first 30 days.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-role">Bachelor of Science in Nursing (BSN)</div>
+        <div class="tl-meta">Isabela State University · Ilagan, Philippines · Expected 2026</div>
+        <ul class="tl-list">
+          <li>Active clinical rotations with hands-on patient care and healthcare documentation training.</li>
+          <li>Studied EMT and pre-hospital emergency care in the Philippine EMS context.</li>
+          <li>Coursework directly applicable to medical VA work: clinical coordination, patient communication, healthcare systems.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-role">Legal Administrative Assistant Certificate</div>
+        <div class="tl-meta">Completed 2025</div>
+        <ul class="tl-list">
+          <li>Formal certification in legal administrative procedures, case management, and legal correspondence.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <span class="section-tag reveal">Testimonials</span>
+    <h2 class="section-title reveal">What Clients Say</h2>
+    <p class="section-sub reveal">Results speak louder than any resume.</p>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <p class="testi-text">Reina brought order to a practice that was drowning in paperwork. She understood our EHR system from day one — no training needed. Our documentation is cleaner, patients are followed up, and I'm seeing more people daily.</p>
+        <div class="testi-author"><div class="testi-avatar">DR</div><div><div class="testi-name">Dr. R.</div><div class="testi-role">Family Physician, USA</div></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-text">Within two weeks my inbox was under control and my calendar made sense for the first time in months. Reina is proactive, discreet, and handles everything with a level of professionalism I didn't expect.</p>
+        <div class="testi-author"><div class="testi-avatar">JM</div><div><div class="testi-name">James M.</div><div class="testi-role">CEO, Technology Company</div></div></div>
+      </div>
+      <div class="testi-card reveal">
+        <p class="testi-text">Finding a legal VA who understands case management and never misses deadlines is genuinely rare. Reina has been invaluable — organized, detail-oriented, and completely trustworthy with sensitive client information.</p>
+        <div class="testi-author"><div class="testi-avatar">AL</div><div><div class="testi-name">Attorney L.</div><div class="testi-role">Managing Partner, Law Firm</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-inner">
+    <div class="avail-badge">Available for New Clients</div>
+    <h2 class="cta-title reveal">Your Next Best Hire is<br/><span>One Conversation Away</span></h2>
+    <p class="cta-sub reveal">I work with a select number of long-term clients. If you're ready to stop being your own administrative assistant — let's talk.</p>
+    <div class="cta-btns reveal">
+      <a href="https://calendly.com/laguismareinamae/new-meeting" target="_blank" class="btn-primary">📅 Book a Discovery Call</a>
+      <a href="mailto:laguismareinamae@gmail.com" class="btn-outline">✉️ Send an Email</a>
+    </div>
+    <div class="cta-contact reveal">
+      <a href="mailto:laguismareinamae@gmail.com" class="cta-link">laguismareinamae@gmail.com</a>
+      <span class="cta-divider">·</span>
+      <a href="tel:+639674387167" class="cta-link">+63 967 438 7167</a>
+      <span class="cta-divider">·</span>
+      <a href="https://www.linkedin.com/in/reinamae-laguisma-3659b5315" target="_blank" class="cta-link">LinkedIn Profile</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#hero" class="footer-logo">Reina Mae R. Laguisma</a>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#proof">Portfolio</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#cta">Contact</a></li>
+  </ul>
+  <p class="footer-copy">© 2025 Reina Mae R. Laguisma · Medical · Executive · Legal VA</p>
+</footer>
+
+<script>
+const reveals=document.querySelectorAll(".reveal");
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      e.target.style.transitionDelay=`${(i%4)*.1}s`;
+      e.target.classList.add("visible");
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:.1});
+reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
